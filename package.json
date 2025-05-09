@@ -1,0 +1,12 @@
+{
+  "name": "snyk-test-project",
+  "version": "1.0.0",
+  "description": "A demo project with a known vulnerability",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "lodash": "4.17.15"
+  }
+}
