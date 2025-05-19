@@ -66,25 +66,27 @@ flowchart TD
     linkStyle 4 stroke:#7f00ff,stroke-width:2px
     linkStyle 5 stroke:#7f00ff,stroke-width:2px
 ```
+
+
 ```mermaid
-flowchart TD
-    Start([Start]) --> Init[Initialize Head/Tail]
-    Init --> Op{Operation?}
-    
-    Op -->|Insert| Insert[Create New Node]
-    Insert --> UpdateTail[Update Tail.next]
-    UpdateTail --> MoveTail[Move Tail Pointer]
-    
-    Op -->|Delete| Check{At Head?}
-    Check -->|Yes| UpdateHead[Update Head Pointer]
-    Check -->|No| FindPrev[Find Previous Node: O(n)]
-    FindPrev --> Bypass[Bypass Deleted Node]
-    
-    UpdateHead & Bypass --> Free[Free Memory]
-    MoveTail & Free --> Stop([Stop])
-    
-    style Start,Stop fill:#4CAF50,stroke:#333
-    style Insert fill:#9f9,stroke:#333
-    style UpdateHead,UpdateTail fill:#bbf,stroke:#333
-    style FindPrev,Bypass fill:#ffcccb,stroke:#333
-```
+flowchart LR
+    Start([Start]) --> Init[Head=null, Tail=null]
+    Init --> Op{Insert or Delete?}
+
+    Op -->|Insert| Create[Create New Node]
+    Create --> Update[Update Tail.next]
+    Update --> Move[Tail = New Node]
+
+    Op -->|Delete| Check{Head == null?}
+    Check -->|Yes| Error[Underflow Error]
+    Check -->|No| Remove[Remove Head Node]
+    Remove --> Free[Free Memory]
+
+    Move & Free --> Stop([Stop])
+
+    style Start,Stop fill:#4CAF50
+    style Create,Update fill:#E1F5FE
+    style Remove,Free fill:#FFEBEE
+```   
+
+
