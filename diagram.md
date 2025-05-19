@@ -1,8 +1,8 @@
 ```mermaid
-graph TD
-    A[Stack LIFO] --> B["30 (Top)"]
-    B --> C["20"]
-    C --> D["10"]
+graph LR
+    A[Queue FIFO] --> B["Front → A"]
+    B --> C["B"]
+    C --> D["C ← Rear"]
     style B fill:#f9f,stroke:#333
     style C fill:#bbf,stroke:#333
     style D fill:#9f9,stroke:#333
