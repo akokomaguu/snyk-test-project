@@ -89,4 +89,41 @@ flowchart LR
     style Remove,Free fill:#FFEBEE
 ```   
 
+```mermaid
+graph TD
+    subgraph "Array Implementation of Queue"
+        subgraph State1["Initial Array"]
+            A1[1] --- A2[2] --- A3[3] --- A4[4] --- A5[5]
+        end
+        
+        subgraph State2["After Enqueue"]
+            B1[1] --- B2[2] --- B3[3] --- B4[4] --- B5[5] --- B6[E]
+            BFront["Front"] -.-> B1
+            BRear["Rear"] -.-> B6
+        end
+        
+        subgraph State3["After Dequeue"]
+            C0[ ] --- C2[2] --- C3[3] --- C4[4] --- C5[5] --- C6[E]
+            CFront["Front"] -.-> C2
+            CRear["Rear"] -.-> C6
+        end
+        
+        subgraph State4["Final Queue Elements"]
+            D1[2] --- D2[3] --- D3[4] --- D4[5] --- D5[E]
+        end
+    end
+    
+    State1 --> State2
+    State2 --> State3
+    State3 --> State4
+    
+    %% Styling
+    classDef filled fill:#1A5E8E,color:white,stroke:#333,stroke-width:2px,rx:5,ry:5
+    classDef empty fill:#88BDBC,color:white,stroke:#333,stroke-width:1px,rx:5,ry:5
+    classDef pointer fill:none,stroke:none
+    
+    class A1,A2,A3,A4,A5,B1,B2,B3,B4,B5,B6,C2,C3,C4,C5,C6,D1,D2,D3,D4,D5 filled
+    class C0 empty
+    class BFront,BRear,CFront,CRear pointer
+```  
 
