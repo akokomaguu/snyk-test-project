@@ -29,36 +29,36 @@ graph TD
 ```
 
 ```mermaid
-graph LR
-    A[DATA] -->|input| B[HASH 1]
-    A -->|input| C[HASH 2]
-    A -->|input| D[HASH 3]
+flowchart TD
+    Data[DATA] -->|input| Hash1[HASH]
+    Data -->|input| Hash2[HASH]
+    Data -->|input| Hash3[HASH]
     
-    B -->|output| E[Bit Array]
-    C -->|output| E
-    D -->|output| E
+    Hash1 -->|output| BitArray
+    Hash2 -->|output| BitArray
+    Hash3 -->|output| BitArray
     
     subgraph BitArray
-        E1[1] --- E2[0] --- E3[1] --- E4[1] --- E5[0] --- E6[0] --- E7[0] --- E8[0] --- E9[1]
+        B1[1] --- B2[0] --- B3[1] --- B4[1] --- B5[0] --- B6[0] --- B7[0] --- B8[0] --- B9[1]
     end
     
-    style A fill:#9ce79c,stroke:#333,stroke-width:2px
-    style B fill:#a6c4f5,stroke:#333,stroke-width:2px
-    style C fill:#a6c4f5,stroke:#333,stroke-width:2px
-    style D fill:#a6c4f5,stroke:#333,stroke-width:2px
-    style E1 fill:white,stroke:#333,stroke-width:1px
-    style E2 fill:white,stroke:#333,stroke-width:1px
-    style E3 fill:white,stroke:#333,stroke-width:1px
-    style E4 fill:white,stroke:#333,stroke-width:1px
-    style E5 fill:white,stroke:#333,stroke-width:1px
-    style E6 fill:white,stroke:#333,stroke-width:1px
-    style E7 fill:white,stroke:#333,stroke-width:1px
-    style E8 fill:white,stroke:#333,stroke-width:1px
-    style E9 fill:white,stroke:#333,stroke-width:1px
+    style Data fill:#9ce79c,stroke:#333,stroke-width:2px
+    style Hash1 fill:#a6c4f5,stroke:#333,stroke-width:2px
+    style Hash2 fill:#a6c4f5,stroke:#333,stroke-width:2px
+    style Hash3 fill:#a6c4f5,stroke:#333,stroke-width:2px
     
-    classDef arrow stroke:#ff0000,stroke-width:2px
-    classDef outputArrow stroke:#7f00ff,stroke-width:2px
+    %% Bit Array styling
+    style B1 fill:white,stroke:#333,stroke-width:1px
+    style B2 fill:white,stroke:#333,stroke-width:1px
+    style B3 fill:white,stroke:#333,stroke-width:1px
+    style B4 fill:white,stroke:#333,stroke-width:1px
+    style B5 fill:white,stroke:#333,stroke-width:1px
+    style B6 fill:white,stroke:#333,stroke-width:1px
+    style B7 fill:white,stroke:#333,stroke-width:1px
+    style B8 fill:white,stroke:#333,stroke-width:1px
+    style B9 fill:white,stroke:#333,stroke-width:1px
     
+    %% Color the arrows
     linkStyle 0 stroke:#ff0000,stroke-width:2px
     linkStyle 1 stroke:#ff0000,stroke-width:2px
     linkStyle 2 stroke:#ff0000,stroke-width:2px
