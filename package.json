@@ -1,5 +1,5 @@
 {
-  "name": "snyk-test-project",
+  "name": "synk-test-project",
   "version": "1.0.0",
   "description": "A demo project with a known vulnerability",
   "main": "index.js",
